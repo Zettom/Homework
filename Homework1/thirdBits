@@ -1,0 +1,4 @@
+int thirdBits()
+{
+    return ((((((part << 9) | part) <<9) | part) <<9) | part) <<1;
+}
