@@ -1,0 +1,4 @@
+int logicalShift(int x, int n)
+{
+    return (x>>n)&((~((~0<<(((31^n)+1)))+1)+(1&!!(n))));
+}
