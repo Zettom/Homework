@@ -1,0 +1,4 @@
+int getByte(int x, int y)
+{
+    return x<<((n^3)<<3))>>24;
+}
