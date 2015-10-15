@@ -1,4 +1,4 @@
-int sign(int x, int y)
+int sign(int x)
 {
     return (x >> 31) | !!x;
 }
