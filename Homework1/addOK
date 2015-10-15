@@ -1,0 +1,7 @@
+int addOk(int a, int b) {
+    int s = a + b;
+    int aSign = a >> 31;
+    int bSign = b >> 31;
+    int sSign = s >> 31;
+    return !((aSign ^ sSign) & (bSign ^ sSign));
+}
