@@ -15,7 +15,7 @@ int main()
                 arr[j] = 0;
             }
             do{
-                i=i+1;
+                i+=1;
             } while (arr[i]==0);
     }
     for (i=1; i<=n; ++i) {
