@@ -11,16 +11,16 @@ int main()
             myString[i] = toupper(myString[i]);
     }
     printf("%s", myString);
-    n = strlen(myString)-2;
+    n = strlen(myString) - 2;
     for(i=0; n-i>0; i++){
-        if (myString[i] == ' '){
+        if (myString[i]==' '){
             continue;
         }
-        if (myString[n] == ' ') {
+        if (myString[n]==' ') {
             n -= 1;
         }
         printf("%c, %c\n", myString[i], myString[n]);
-        if (myString[i] != myString[n]) {
+        if (myString[i]!=myString[n]) {
             printf("NO");
             return 0;
         }
