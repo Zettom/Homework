@@ -1,0 +1,8 @@
+int floatBits3(){
+    float numb;
+    int *number = &numb;
+    scanf("%f", &numb );
+    int mantissa = *(number) & ~(511 << 23);
+    printf("Please, enter the number\n");
+    return mantissa;
+}
