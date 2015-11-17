@@ -4,7 +4,7 @@ int floatBits1(){
         int i;
     };
     union Number number;
-    printf("Please, enter the number");
+    printf("Please, enter the number\n");
     scanf("%f", &number.f);
     int mantissa;
     mantissa = number.i & ~(511 << 23);
