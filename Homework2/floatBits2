@@ -1,0 +1,11 @@
+int floatBits2(){
+    struct Number{
+        unsigned mant: 23;
+        unsigned exp: 8;
+        unsigned sign: 1;
+    };
+    struct Number number;
+    printf("Please, enter the number");
+    scanf("%f", &number);
+    return number.mant;
+}
