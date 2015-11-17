@@ -1,0 +1,12 @@
+int floatBits1(){
+    union Number{
+        float f;
+        int i;
+    };
+    union Number number;
+    printf("Please, enter the number");
+    scanf("%f", &number.f);
+    int mantissa;
+    mantissa = number.i & ~(511 << 23);
+    return mantissa;
+}
