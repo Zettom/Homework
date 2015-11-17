@@ -5,7 +5,7 @@ int floatBits2(){
         unsigned sign: 1;
     };
     struct Number number;
-    printf("Please, enter the number");
+    printf("Please, enter the number\n");
     scanf("%f", &number);
     return number.mant;
 }
