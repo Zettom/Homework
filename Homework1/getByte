@@ -1,4 +1,5 @@
 int getByte(int x, int n)
 {
-    return x<<((n^3)<<3))>>24;
+    x = (unsigned int) x<<((n^3)<<3)>>24;
+    return x;
 }
