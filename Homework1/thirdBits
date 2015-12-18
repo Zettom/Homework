@@ -1,4 +1,5 @@
 int thirdBits()
 {
+    const part = 146;
     return ((((((part << 9) | part) <<9) | part) <<9) | part) <<1;
 }
