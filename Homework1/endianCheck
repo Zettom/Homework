@@ -1,7 +1,9 @@
-int endianCheck() {
-    union {
-    int value;
-    char bytes[4];
+int endianCheck() 
+{
+    union 
+    {           
+        int value;    
+        char bytes[sizeof(int)];    
     } test;
     test.value = 0x1;
     return test.bytes[0];
