@@ -1,0 +1,5 @@
+int fitsbits(int x, int n)
+{
+	int mask = ~0<<(n - 1);
+	return !((x & ~mask) ^ x) | !((~x & ~mask) ^ ~x);      
+}

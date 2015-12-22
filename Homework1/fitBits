@@ -1,4 +1,0 @@
-int fitBits(int x, int n)
-{
-    return !(((x & ( ~(1 << 31))) << 1) >> n) | !( ~x << 1 >> n);
-}
