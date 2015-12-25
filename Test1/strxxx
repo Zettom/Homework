@@ -30,8 +30,8 @@ void my_strcpy(char *dst, char *src)
     do
     {
         dst[cnt] = src[cnt];
-        cnt++;
-    } while(src[cnt] != '\0');
+        cnt;
+    } while(src[cnt++] != '\0');
 }
 
 void my_strctt (char *dst, char *src)
