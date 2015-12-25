@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define maxLength 512
+#define maxLength 100000
 typedef struct node node;
 typedef struct hashTable hashTable;
 typedef int (*HashFunction)(char*, int);
@@ -167,11 +167,12 @@ int Hash1(char *key, int sizeOfTable)
 
 int Hash2(char *key, int sizeOfTable)
 {
-    int i = 0;
-    long long hash;
-    while(key[i]!='\0')
+    int l = strlen(key);
+    int i;
+    int hash = 0;
+    for (i = 0; i < l; i++)
     {
-        hash = hash + key[i++];
+        hash = hash + (int)key[i];
     }
     return hash % sizeOfTable;
 }
@@ -275,17 +276,3 @@ void statistics(hashTable *HashTable)
     }
 }
 
-int main()
-{
-    FILE *fp = fopen ("input.txt", "r");
-    if(fp == NULL)
-    {
-        printf("Cannot open file");
-    }
-    hashTable *MyTable = CreateTable(12, Hash2);
-    fillTable(MyTable, fp);
-    printTable(MyTable);
-    statistics(MyTable);
-    deleteTable(MyTable);
-    return 0;
-}
