@@ -65,21 +65,6 @@ void deleteCell(node **head)
         }
 }
 
-void set(hashTable *HashTable, char *key, int value)
-{
-    int number = HashTable->hashFunc(key, HashTable->size);
-    node *tmp = (node*)malloc(sizeof(node));
-    if (tmp == NULL)
-    {
-        printf("Memory is not allocated");
-        return;
-    }
-    tmp->value = value;
-    strcpy(tmp->key, key);
-    tmp->next = HashTable->table[number];
-    HashTable->table[number] = tmp;
-}
-
 node *search(hashTable *HashTable, char *key)
 {
     int number = HashTable->hashFunc(key, HashTable->size);
@@ -93,6 +78,31 @@ node *search(hashTable *HashTable, char *key)
         tmp = tmp->next;
     }
     return tmp;
+}
+
+
+void set (hashTable *HashTable, char *key, int value)
+{
+    node *tmp = search(HashTable, key);
+    if (tmp != NULL)
+    {
+        tmp->value = value;
+    }
+    else
+    {
+        int number = HashTable->hashFunc(key, HashTable->size);
+        tmp = (node*)malloc(sizeof(node));
+        if (tmp == NULL)
+        {
+            printf("Memory is not allocated");
+            return;
+        }
+        tmp->value = value;
+        strcpy(tmp->key, key);
+        tmp->next = HashTable->table[number];
+        HashTable->table[number] = tmp;
+    }
+
 }
 
 int get(hashTable *HashTable, char *key)
