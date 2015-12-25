@@ -17,11 +17,6 @@ void fillWords (hashTable *HashTable, FILE *fp)
         c = fgetc(fp);
         if ((c == EOF || c == '\n' || c == '\t' || c == ' ') && strlen(word) != 0)
         {
-            int n = get(HashTable, word) + 1;
-            if (search(HashTable, word) != NULL)
-            {
-                removeNode(HashTable, word);
-            }
             set(HashTable, word, get(HashTable, word) + 1);
             i = 0;
         }
@@ -47,9 +42,8 @@ int main()
     {
         printf("Cannot open file");
     }
-    hashTable *MyTable = CreateTable(10000, Hash3);
+    hashTable *MyTable = CreateTable(10000, Hash2);
     fillWords(MyTable, fp);
-//    printTable(MyTable);
     statistics(MyTable);
     deleteTable(MyTable);
     return 0;
